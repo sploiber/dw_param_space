@@ -6,8 +6,8 @@ from dimod import ExactSolver
 # what other kind of variables are there?
 p, x, y, z = Binary("p"), Binary("x"), Binary("y"), Binary("z")
 
-lamda = 1.4
-H = (p * z) + (lamda * (3 * p) + (x * y) - (2 * p * (x + y)))
+lamda = 1.7
+H = (p * z) + (lamda * ((3 * p) + (x * y) - (2 * p * (x + y))))
 
 model = H.compile()
 qubo, offset = model.to_qubo()
