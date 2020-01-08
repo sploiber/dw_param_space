@@ -8,13 +8,7 @@ ports:
 
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/44_config_start_tasks/
 tasks:
-  - init: echo 'init script' # runs during prebuild
-    command: echo 'start script'
-  - init: echo 'set up Python 3'
-    command: pyenv local 3.7.6
-  - init: echo 'install updated pip'
-    command: pip install --upgrade pip
-  - init: echo 'more pips'
-    command: pip install networkx dwave_networkx matplotlib pycodestyle
-  - init: echo 'dwave'
-    command: pip install dwave-ocean-sdk
+  - init: >
+      pip install --upgrade pip &&
+      pip install networkx dwave_networkx matplotlib pycodestyle &&
+      pip install dwave-ocean-sdk
